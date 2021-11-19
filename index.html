@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webtt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <ul id="nav">
+                <li><a href="#"><b>Home</b></a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">More</a></li>
+            </ul>        
+        </div>
+        <div class="content">
+           <div id="mads">
+            <img id="may" src="img/mây.png">
+            <img id="meo" src="img/meo.png">
+           </div>  
+           <div class="mad">
+            <img id="chu" src="img/chu.png">
+    
+            <button class="btn">Trả Lời đi</button> 
+           </div>
+        </div>
+        <div class="rep">
+            <div class="icon" onclick="">
+                <i class="fas fa-times-circle"></i> 
+            </div>
+            <div class="qt">Cậu có thích tớ không?</div>
+            <button class="yes" onclick="openMd()">Có</button>
+            <button class="no" >Không</button>
+        </div>
+    <div id="fomt">  
+        <div class="if_yes"> 
+            <img class="imgg" src="img/mao.gif" alt=""><br><br>
+            Tớ cũng thích cậu
+            <i class="fas fa-heart"></i><br><br>
+            <p>Tớ hứa sẽ sửa cái bug này mà tin tớ :3</p>
+            <div class="iconss" onclick="closeModalss()">
+                <i class="fas fa-times-circle"></i>
+            </div>
+        </div>
+        <div class="if_else">Thật là buồn
+            <i class="fas fa-heart-broken"></i>
+            <div class="icons" onclick="closeModals()">
+                <i class="fas fa-times-circle"></i>
+            </div>
+        </div>
+    </div>      
+        <div class="conten">
+            <div class="tect">
+                <p>Music</p>
+            </div>
+            <div class="right">
+                <i class="fas fa-play" id="iconns"></i>
+            </div>
+        </div>
+        <audio autoplay id="mySong" src="mp3/Sẵn sàng yêu em đi thôi ( có lời )-Woni x Minh tú- 7 5 0 7 M_u_s_i_c-Audio Lyrics.mp3"></audio>
+</body>
+<script>
+       const btn = document.querySelector('.btn')
+    const modal = document.querySelector('.rep')
+    const closeIcon = document.querySelector('.icon')
+    const yes = document.querySelector('.yes')
+    const no = document.querySelector('.no')
+    const ifYes = document.querySelector('.if_yes')
+    const ifElse = document.querySelector('.if_else')
+    
+    function openModal() {
+        modal.classList.add('open')
+    }
+
+    btn.addEventListener('click', openModal)
+    
+    function openMd() {
+        ifYes.classList.add('opens')
+    }
+
+    function openMds() {
+        ifElse.classList.add('openss')
+    }
+
+    if(ifYes == yes) {
+        yes.addEventListener('click', openMd)
+    }
+    if(ifElse == no) {
+        no.addEventListener('click', openMds)
+    }
+
+    function closeModal(){
+        modal.classList.remove('open')
+    }
+
+    function closeModals(){
+        ifElse.classList.remove('openss')
+    }
+
+    function closeModalss(){
+        ifYes.classList.remove('opens')
+    }
+
+    closeIcon.addEventListener('click', closeModal)
+    var mySong = document.getElementById("mySong");
+    var iconns = document.getElementById("iconns");
+
+    iconns.onclick = function() {
+        mySong.play();
+    }
+    
+    
+
+</script>
+</html>
